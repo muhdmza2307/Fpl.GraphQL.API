@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Build">
+    <TargetFramework>net6.0</TargetFramework>
+    <IsTransformWebConfigDisabled>true</IsTransformWebConfigDisabled>
+	  <LangVersion>10</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <Authors>Project Author</Authors>
+    <Company>Project Author</Company>
+    <Product>Project Title</Product>
+    <Description>Project Description</Description>
+    <Copyright>Copyright © Project Author. All rights Reserved</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup Label="Files">
+	  <Content Update="appsettings.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Update="appsettings.Local.json">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+  </ItemGroup>
+
+  <ItemGroup Label="Package References">
+    <PackageReference Include="Boxed.AspNetCore" Version="7.0.0" />
+    <PackageReference Include="Boxed.Mapping" Version="5.3.0" />
+    <PackageReference Include="GraphQL.Authorization" Version="4.0.0" />
+    <PackageReference Include="GraphQL.Server.Authorization.AspNetCore" Version="5.0.2" />
+    <PackageReference Include="GraphQL.Server.Ui.Playground" Version="5.0.2" />
+    <PackageReference Include="GraphQL.Server.Ui.Voyager" Version="5.0.2" />
+    <PackageReference Include="HotChocolate.AspNetCore" Version="12.0.1" />
+    <PackageReference Include="HotChocolate.AspNetCore.Authorization" Version="12.0.1" />
+    <PackageReference Include="HotChocolate.Data" Version="12.0.1" />
+    <PackageReference Include="HotChocolate.Types.Scalars" Version="12.0.1" />
+    <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Fpl.Portal.Common\Fpl.Portal.Common.csproj" />
+    <ProjectReference Include="..\Fpl.Portal.Handlers\Fpl.Portal.Handlers.csproj" />
+    <ProjectReference Include="..\Fpl.Portal.Mapping\Fpl.Portal.Mapping.csproj" />
+    <ProjectReference Include="..\Fpl.Portal.Models\Fpl.Portal.Models.csproj" />
+    <ProjectReference Include="..\Fpl.Portal.Repository\Fpl.Portal.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

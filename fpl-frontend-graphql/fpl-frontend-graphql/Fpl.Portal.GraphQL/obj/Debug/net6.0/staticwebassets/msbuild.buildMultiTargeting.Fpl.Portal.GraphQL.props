@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Fpl.Portal.GraphQL.props" />
+</Project>

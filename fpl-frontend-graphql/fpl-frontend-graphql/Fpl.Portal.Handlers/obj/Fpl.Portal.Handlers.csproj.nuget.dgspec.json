@@ -1,0 +1,276 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Handlers\\Fpl.Portal.Handlers.csproj": {}
+  },
+  "projects": {
+    "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Common\\Fpl.Portal.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Common\\Fpl.Portal.Common.csproj",
+        "projectName": "Fpl.Portal.Common",
+        "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Common\\Fpl.Portal.Common.csproj",
+        "packagesPath": "C:\\Users\\MirzaBinKamaludin\\.nuget\\packages\\",
+        "outputPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MirzaBinKamaludin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "HotChocolate.Execution": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "HotChocolate.Types": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Microsoft.AspNetCore.HttpOverrides": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "Microsoft.AspNetCore.Server.Kestrel.Core": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Handlers\\Fpl.Portal.Handlers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Handlers\\Fpl.Portal.Handlers.csproj",
+        "projectName": "Fpl.Portal.Handlers",
+        "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Handlers\\Fpl.Portal.Handlers.csproj",
+        "packagesPath": "C:\\Users\\MirzaBinKamaludin\\.nuget\\packages\\",
+        "outputPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Handlers\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MirzaBinKamaludin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\Fpl.Portal.Models.csproj": {
+                "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\Fpl.Portal.Models.csproj"
+              },
+              "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Repository\\Fpl.Portal.Repository.csproj": {
+                "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Repository\\Fpl.Portal.Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\Fpl.Portal.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\Fpl.Portal.Models.csproj",
+        "projectName": "Fpl.Portal.Models",
+        "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\Fpl.Portal.Models.csproj",
+        "packagesPath": "C:\\Users\\MirzaBinKamaludin\\.nuget\\packages\\",
+        "outputPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MirzaBinKamaludin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Repository\\Fpl.Portal.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Repository\\Fpl.Portal.Repository.csproj",
+        "projectName": "Fpl.Portal.Repository",
+        "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Repository\\Fpl.Portal.Repository.csproj",
+        "packagesPath": "C:\\Users\\MirzaBinKamaludin\\.nuget\\packages\\",
+        "outputPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\MirzaBinKamaludin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Common\\Fpl.Portal.Common.csproj": {
+                "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Common\\Fpl.Portal.Common.csproj"
+              },
+              "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\Fpl.Portal.Models.csproj": {
+                "projectPath": "C:\\WorkSpace\\DotNetSample\\Fpl.GraphQL.API\\fpl-frontend-graphql\\fpl-frontend-graphql\\Fpl.Portal.Models\\Fpl.Portal.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
