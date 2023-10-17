@@ -5,10 +5,11 @@ using Fpl.Portal.Repository.FunctionCallers.Interfaces;
 
 namespace Fpl.Portal.Repository.FunctionCallers;
 
-public class GetFixtureByIdFunctionCaller : GetFunctionCaller<IEnumerable<FixtureQueryResponse>, GetFixturesInput>,
-    IGetFixtureFunctionCallerById
+public class GetFixturesByEventIdFunctionCallerById :
+    GetFunctionCaller<IEnumerable<FixtureQueryResponse>, GetFixturesInput>,
+    IGetFixturesByEventIdFunctionCallerById
 {
-    public GetFixtureByIdFunctionCaller(IFunctionRequestService functionRequestService,
+    public GetFixturesByEventIdFunctionCallerById(IFunctionRequestService functionRequestService,
         ApiEndPointsOptions endPointsOptions)
         : base(functionRequestService, endPointsOptions)
     {

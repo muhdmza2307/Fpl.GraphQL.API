@@ -31,11 +31,11 @@ namespace Fpl.Portal.GraphQL
             services
                 .AddSingleton<IDroidRepository, DroidRepository>()
                 .AddSingleton<IGetBootstrapStaticFunctionCaller, GetBootstrapStaticFunctionCaller>()
-                .AddSingleton<IGetFixtureFunctionCallerById, GetFixtureByIdFunctionCaller>();
+                .AddSingleton<IGetFixturesByEventIdFunctionCallerById, GetFixturesByEventIdFunctionCallerById>();
         
         public static IServiceCollection AddProjectHandlers(this IServiceCollection services) =>
             services
-                .AddSingleton<IGetFixtureByIdHandler, GetFixtureByIdHandler>();
+                .AddSingleton<IGetFixturesByEventIdHandler, GetFixturesByEventIdHandler>();
 
         public static IRequestExecutorBuilder AddProjectScalarTypes(this IRequestExecutorBuilder builder) =>
             builder.BindRuntimeType<DateTime, DateType>();

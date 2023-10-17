@@ -7,38 +7,40 @@ using Newtonsoft.Json;
 
 namespace Fpl.Portal.Handlers.Fixtures;
 
-public class GetFixtureByIdHandler : IGetFixtureByIdHandler
+public class GetFixturesByEventIdHandler : IGetFixturesByEventIdHandler
 {
     private readonly IGetBootstrapStaticFunctionCaller _getBootstrapStaticFunctionCaller;
-    private readonly IGetFixtureFunctionCallerById _getFixtureByIdFunctionCaller;
+    private readonly IGetFixturesByEventIdFunctionCallerById _getFixturesByEventIdFunctionCallerById;
     private readonly IMapper _mapper;
 
-    public GetFixtureByIdHandler(IGetBootstrapStaticFunctionCaller getBootstrapStaticFunctionCaller,
-        IGetFixtureFunctionCallerById getFixtureByIdFunctionCaller,
+    public GetFixturesByEventIdHandler(IGetBootstrapStaticFunctionCaller getBootstrapStaticFunctionCaller,
+        IGetFixturesByEventIdFunctionCallerById getFixturesByEventIdFunctionCallerById,
         IMapper mapper)
     {
         _getBootstrapStaticFunctionCaller = getBootstrapStaticFunctionCaller;
-        _getFixtureByIdFunctionCaller = getFixtureByIdFunctionCaller;
+        _getFixturesByEventIdFunctionCallerById = getFixturesByEventIdFunctionCallerById;
         _mapper = mapper;
     }
 
-    public async Task<FixturesResult> HandleAsync(GetFixturesInput request)
+    public async Task<IEnumerable<FixturesResult>> HandleAsync(GetFixturesInput request)
     {
         var globalFplData = await GetBootstrapStaticAsync();
         var fixtures = (await GetFixturesAsync()).ToArray();
 
-        return fixtures.Any() ? BuildFixture() : new FixturesResult();
+        return fixtures
+            .Select(BuildFixture)
+            .ToList();
 
         
         //Local Functions
         async Task<IEnumerable<FixtureQueryResponse>> GetFixturesAsync() =>
-            await _getFixtureByIdFunctionCaller
+            await _getFixturesByEventIdFunctionCallerById
                 .ExecuteAsync(request)
                 .ConfigureAwait(false);
 
-        FixturesResult BuildFixture() =>
-            _mapper.Map<FixturesResult>(fixtures.FirstOrDefault(), 
-                CreateMappingOptions(globalFplData, fixtures.FirstOrDefault()!));
+        FixturesResult BuildFixture(FixtureQueryResponse fixtureQueryResponse) =>
+            _mapper.Map<FixturesResult>(fixtureQueryResponse, 
+                CreateMappingOptions(globalFplData, fixtureQueryResponse));
     }
     
     private static Action<IMappingOperationOptions> CreateMappingOptions(BootstrapStaticResponse globalFplData,
@@ -54,7 +56,7 @@ public class GetFixtureByIdHandler : IGetFixtureByIdHandler
         
         //Local Function
         Team FindTeamFromGlobal(int teamId) =>
-            globalFplData!.Teams.ToList()
+            globalFplData.Teams.ToList()
                 .Find(t => t.Id == teamId)!;
     }
     
