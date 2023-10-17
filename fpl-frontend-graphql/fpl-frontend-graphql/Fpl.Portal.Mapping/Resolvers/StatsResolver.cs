@@ -46,6 +46,7 @@ public class StatsResolver :  IValueResolver<FixtureQueryResponse, FixturesResul
         {
             var info = new StatInformation
             {
+                Value = fixtureStatValueQueryResponse.Value,
                 Label = new Label
                 {
                     LabelId = players?

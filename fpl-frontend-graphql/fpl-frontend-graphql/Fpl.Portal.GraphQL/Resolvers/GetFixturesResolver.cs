@@ -9,8 +9,8 @@ namespace Fpl.Portal.GraphQL.Resolvers;
 
 public class GetFixturesResolver
 {
-    public async Task<FixturesResult> GetFixturesByIdAsync(
-        [Service] IGetFixtureByIdHandler getFixtureByIdHandler,
+    public async Task<IEnumerable<FixturesResult>> GetFixturesByEventIdAsync(
+        [Service] IGetFixturesByEventIdHandler getFixtureByIdHandler,
         GetFixturesInput input) =>
         await getFixtureByIdHandler
             .HandleAsync(input)

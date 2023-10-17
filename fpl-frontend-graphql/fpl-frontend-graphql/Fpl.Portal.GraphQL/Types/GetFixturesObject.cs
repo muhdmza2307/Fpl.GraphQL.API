@@ -8,7 +8,7 @@ public class GetFixturesObject : ObjectTypeExtension<GetFixturesResolver>
     protected override void Configure(IObjectTypeDescriptor<GetFixturesResolver> descriptor)
     {
         descriptor.Name("Query")
-            .Field(x => x.GetFixturesByIdAsync(default!, default!))
-            .Description("Returns a list of fixtures");
+            .Field(x => x.GetFixturesByEventIdAsync(default!, default!))
+            .Description("Returns a list of fixtures by event Id");
     }
 }

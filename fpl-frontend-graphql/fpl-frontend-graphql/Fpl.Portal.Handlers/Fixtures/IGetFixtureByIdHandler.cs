@@ -2,7 +2,7 @@ using Fpl.Portal.Models.Fixtures;
 
 namespace Fpl.Portal.Handlers.Fixtures;
 
-public interface IGetFixtureByIdHandler
+public interface IGetFixturesByEventIdHandler
 {
-    Task<FixturesResult> HandleAsync(GetFixturesInput request);
+    Task<IEnumerable<FixturesResult>> HandleAsync(GetFixturesInput request);
 }
