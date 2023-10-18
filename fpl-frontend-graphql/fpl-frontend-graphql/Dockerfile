@@ -19,8 +19,6 @@ COPY "Fpl.Portal.Mapping/*.csproj" "Fpl.Portal.Mapping/"
 COPY "Fpl.Portal.Repository/*.csproj" "Fpl.Portal.Repository/"
 COPY "Fpl.Portal.Handlers/*.csproj" "Fpl.Portal.Handlers/"
 
-RUN dotnet restore
-COPY . .
 
 
 RUN dotnet build "Fpl.Portal.GraphQL/Fpl.Portal.GraphQL.sln" --configuration $Configuration --no-restore
