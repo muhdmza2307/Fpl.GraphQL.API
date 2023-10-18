@@ -7,6 +7,7 @@ public static class FplGraphQlProfiles
 {
     public static readonly IEnumerable<Profile> Profiles = new List<Profile>
     {
-        new FixturesResultMappingProfile()
+        new FixturesResultMappingProfile(),
+        new EventResultMappingProfile()
     };
 }
