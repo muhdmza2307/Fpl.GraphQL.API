@@ -11,13 +11,13 @@ ARG Configuration=Release
 ENV DOTNET_CLI_TELEMETRY_OPTOUT=true \
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
 WORKDIR /src
-COPY "Fpl.Portal.GraphQL/Fpl.Portal.GraphQL.sln" "."
-COPY "Fpl.Portal.GraphQ/*.csproj" "Prescient.Portal.GraphQL/"
-COPY "Fpl.Portal.Common/*.csproj" "Prescient.Portal.Common/"
-COPY "Fpl.Portal.Models/*.csproj" "Prescient.Portal.Models/"
-COPY "Fpl.Portal.Mapping/*.csproj" "Prescient.Portal.Mapping/"
-COPY "Fpl.Portal.Repository/*.csproj" "Prescient.Portal.Repository/"
-COPY "Fpl.Portal.Handlers/*.csproj" "Prescient.Portal.Repository/"
+COPY "Fpl.Portal.GraphQL/Fpl.Portal.GraphQL.sln" "Fpl.Portal.GraphQL/"
+COPY "Fpl.Portal.GraphQ/*.csproj" "Fpl.Portal.GraphQL/"
+COPY "Fpl.Portal.Common/*.csproj" "Fpl.Portal.Common/"
+COPY "Fpl.Portal.Models/*.csproj" "Fpl.Portal.Models/"
+COPY "Fpl.Portal.Mapping/*.csproj" "Fpl.Portal.Mapping/"
+COPY "Fpl.Portal.Repository/*.csproj" "Fpl.Portal.Repository/"
+COPY "Fpl.Portal.Handlers/*.csproj" "Fpl.Portal.Handlers/"
 
 RUN dotnet restore
 COPY . .
