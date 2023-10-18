@@ -1,9 +1,7 @@
 using AutoMapper;
-using Fpl.Portal.Common.Extensions;
 using Fpl.Portal.Models.BootstrapStatic;
 using Fpl.Portal.Models.Fixtures;
 using Fpl.Portal.Repository.FunctionCallers.Interfaces;
-using Newtonsoft.Json;
 
 namespace Fpl.Portal.Handlers.Fixtures;
 

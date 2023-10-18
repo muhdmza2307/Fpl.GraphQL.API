@@ -9,15 +9,15 @@ public class StatIdentifierTypeEnumObject : EnumType<StatIdentifier>
     {
         descriptor.Name("StatIdentifier");
 
-        descriptor.Value(StatIdentifier.GoalsScored).Name("goals_scored");
-        descriptor.Value(StatIdentifier.Assists).Name("assists");
-        descriptor.Value(StatIdentifier.OwnGoals).Name("own_goals");
-        descriptor.Value(StatIdentifier.PenaltiesSaved).Name("penalties_saved");
-        descriptor.Value(StatIdentifier.PenaltiesMissed).Name("penalties_missed");
-        descriptor.Value(StatIdentifier.YellowCards).Name("yellow_cards");        
-        descriptor.Value(StatIdentifier.RedCards).Name("red_cards");
-        descriptor.Value(StatIdentifier.Saves).Name("saves");
-        descriptor.Value(StatIdentifier.Bonus).Name("bonus");
-        descriptor.Value(StatIdentifier.Bps).Name("bps");
+        descriptor.Value(StatIdentifier.GoalsScored).Name("GoalsScored");
+        descriptor.Value(StatIdentifier.Assists).Name("Assists");
+        descriptor.Value(StatIdentifier.OwnGoals).Name("OwnGoals");
+        descriptor.Value(StatIdentifier.PenaltiesSaved).Name("PenaltiesSaved");
+        descriptor.Value(StatIdentifier.PenaltiesMissed).Name("PenaltiesMissed");
+        descriptor.Value(StatIdentifier.YellowCards).Name("YellowCards");        
+        descriptor.Value(StatIdentifier.RedCards).Name("RedCards");
+        descriptor.Value(StatIdentifier.Saves).Name("Saves");
+        descriptor.Value(StatIdentifier.Bonus).Name("Bonus");
+        descriptor.Value(StatIdentifier.Bps).Name("Bps");
     }
 }

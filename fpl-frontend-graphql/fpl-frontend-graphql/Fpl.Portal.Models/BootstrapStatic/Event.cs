@@ -5,31 +5,31 @@ namespace Fpl.Portal.Models.BootstrapStatic
     public class Event
     {
         [JsonPropertyName("id")]
-        public int Id { get; set; }
+        public int EventId { get; set; }
 
         [JsonPropertyName("name")]
-        public string Name { get; set; } = null!;
+        public string EventName { get; set; } = null!;
 
         [JsonPropertyName("deadline_time")]
         public DateTime DeadlineTime { get; set; }
 
         [JsonPropertyName("average_entry_score")]
-        public int AverageEntryScore { get; set; }
+        public int EntryScoreAverage { get; set; }
 
         [JsonPropertyName("finished")]
-        public bool Finished { get; set; }
+        public bool IsFinished { get; set; }
 
         [JsonPropertyName("data_checked")]
-        public bool DataChecked { get; set; }
+        public bool IsDataChecked { get; set; }
 
         [JsonPropertyName("highest_scoring_entry")]
         public int? HighestScoringEntry { get; set; }
 
         [JsonPropertyName("deadline_time_epoch")]
-        public long DeadlineTimeEpoch { get; set; }
+        public long DeadlineTimePeriod { get; set; }
 
         [JsonPropertyName("deadline_time_game_offset")]
-        public int DeadlineTimeGameOffset { get; set; }
+        public int GameOffsetUntilDeadline { get; set; }
 
         [JsonPropertyName("highest_score")]
         public int? HighestScore { get; set; }
@@ -44,10 +44,10 @@ namespace Fpl.Portal.Models.BootstrapStatic
         public bool IsNext { get; set; }
 
         [JsonPropertyName("cup_leagues_created")]
-        public bool CupLeaguesCreated { get; set; }
+        public bool IsCupLeaguesCreated { get; set; }
 
         [JsonPropertyName("h2h_ko_matches_created")]
-        public bool H2HKoMatchesCreated { get; set; }
+        public bool IsH2HMatchesCreated { get; set; }
 
         [JsonPropertyName("chip_plays")]
         public IEnumerable<ChipPlay> ChipPlays { get; set; } = Enumerable.Empty<ChipPlay>();
@@ -65,7 +65,7 @@ namespace Fpl.Portal.Models.BootstrapStatic
         public TopElementInfo? TopElementInfo { get; set; }
 
         [JsonPropertyName("transfers_made")]
-        public int? TransfersMade { get; set; }
+        public int? TotalTransferMade { get; set; }
 
         [JsonPropertyName("most_captained")]
         public int? MostCaptained { get; set; }

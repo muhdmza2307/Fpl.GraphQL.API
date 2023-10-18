@@ -9,13 +9,9 @@ using HotChocolate.Execution.Configuration;
 using HotChocolate.Types;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AutoMapper;
-using Fpl.Portal.Common.Configuration.Options;
 using Fpl.Portal.GraphQL.Types.EnumTypes;
+using Fpl.Portal.Handlers.Events;
 using Fpl.Portal.Handlers.Fixtures;
 using Fpl.Portal.Mapping;
 
@@ -35,7 +31,8 @@ namespace Fpl.Portal.GraphQL
         
         public static IServiceCollection AddProjectHandlers(this IServiceCollection services) =>
             services
-                .AddSingleton<IGetFixturesByEventIdHandler, GetFixturesByEventIdHandler>();
+                .AddSingleton<IGetFixturesByEventIdHandler, GetFixturesByEventIdHandler>()
+                .AddSingleton<IGetLatestEventHandler, GetLatestEventHandler>();
 
         public static IRequestExecutorBuilder AddProjectScalarTypes(this IRequestExecutorBuilder builder) =>
             builder.BindRuntimeType<DateTime, DateType>();
@@ -60,10 +57,12 @@ namespace Fpl.Portal.GraphQL
 
         private static IRequestExecutorBuilder AddQueryTypes(this IRequestExecutorBuilder builder) =>
             builder.AddQueryType(x => x.Name("Query"))
-                .AddType<GetFixturesObject>();
+                .AddType<GetFixturesObject>()
+                .AddType<GetEventsObject>();
 
         private static IRequestExecutorBuilder AddEnumTypes(this IRequestExecutorBuilder builder) => builder
-            .AddType<StatIdentifierTypeEnumObject>();
+            .AddType<StatIdentifierTypeEnumObject>()
+            .AddType<StrategyTypeEnumObject>();
 
         public static IServiceCollection RegisterAutoMapper(this IServiceCollection services)
         {
