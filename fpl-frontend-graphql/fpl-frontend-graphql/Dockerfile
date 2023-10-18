@@ -12,7 +12,7 @@ ENV DOTNET_CLI_TELEMETRY_OPTOUT=true \
     DOTNET_SKIP_FIRST_TIME_EXPERIENCE=true
 WORKDIR /src
 COPY "Fpl.Portal.GraphQL/Fpl.Portal.GraphQL.sln" "Fpl.Portal.GraphQL/"
-COPY "Fpl.Portal.GraphQ/*.csproj" "Fpl.Portal.GraphQL/"
+COPY "Fpl.Portal.GraphQL/*.csproj" "Fpl.Portal.GraphQL/"
 COPY "Fpl.Portal.Common/*.csproj" "Fpl.Portal.Common/"
 COPY "Fpl.Portal.Models/*.csproj" "Fpl.Portal.Models/"
 COPY "Fpl.Portal.Mapping/*.csproj" "Fpl.Portal.Mapping/"
