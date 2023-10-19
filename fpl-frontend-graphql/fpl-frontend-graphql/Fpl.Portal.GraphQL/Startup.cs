@@ -66,17 +66,14 @@ namespace Fpl.Portal.GraphQL
 
                         // Map the GraphQL HTTP and web socket endpoint at /graphql.
                         builder.MapGraphQL().WithOptions(options);
-                    
-                        if (!_webHostEnvironment.IsProduction())
-                        { 
-                            // Map the GraphQL Playground UI to try out the GraphQL API at /.
-                            builder.MapGraphQLPlayground("/"); 
-                            // Map the GraphQL Voyager UI to let you navigate your GraphQL API as a spider graph at /voyager.
-                            builder.MapGraphQLVoyager("/voyager"); 
-                            // Map the GraphQL Banana Cake Pop UI to let you navigate your GraphQL API at /banana.
-                            builder.MapBananaCakePop("/banana"); 
-                        } 
-                    
+                        
+                        // Map the GraphQL Playground UI to try out the GraphQL API at /.
+                        builder.MapGraphQLPlayground("/"); 
+                        // Map the GraphQL Voyager UI to let you navigate your GraphQL API as a spider graph at /voyager.
+                        builder.MapGraphQLVoyager("/voyager"); 
+                        // Map the GraphQL Banana Cake Pop UI to let you navigate your GraphQL API at /banana.
+                        builder.MapBananaCakePop("/banana");
+
                         // Map health check endpoints.
                         builder
                         .MapHealthChecks("/status")
