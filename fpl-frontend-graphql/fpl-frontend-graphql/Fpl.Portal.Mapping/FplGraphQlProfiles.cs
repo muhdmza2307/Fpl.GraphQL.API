@@ -8,6 +8,8 @@ public static class FplGraphQlProfiles
     public static readonly IEnumerable<Profile> Profiles = new List<Profile>
     {
         new FixturesResultMappingProfile(),
-        new EventResultMappingProfile()
+        new EventResultMappingProfile(),
+        new TeamResultMappingProfile(),
+        new PlayerResultMappingProfile()
     };
 }

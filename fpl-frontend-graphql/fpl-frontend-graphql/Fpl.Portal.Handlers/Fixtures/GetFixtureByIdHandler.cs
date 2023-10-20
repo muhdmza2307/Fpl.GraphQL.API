@@ -31,6 +31,11 @@ public class GetFixturesByEventIdHandler : IGetFixturesByEventIdHandler
 
         
         //Local Functions
+        async Task<BootstrapStaticResponse> GetBootstrapStaticAsync() =>
+            await _getBootstrapStaticFunctionCaller
+                .ExecuteAsync()
+                .ConfigureAwait(false);
+        
         async Task<IEnumerable<FixtureQueryResponse>> GetFixturesAsync() =>
             await _getFixturesByEventIdFunctionCallerById
                 .ExecuteAsync(request)
@@ -57,9 +62,4 @@ public class GetFixturesByEventIdHandler : IGetFixturesByEventIdHandler
             globalFplData.Teams.ToList()
                 .Find(t => t.Id == teamId)!;
     }
-    
-    private async Task<BootstrapStaticResponse> GetBootstrapStaticAsync() =>
-        await _getBootstrapStaticFunctionCaller
-            .ExecuteAsync()
-            .ConfigureAwait(false);
 }
