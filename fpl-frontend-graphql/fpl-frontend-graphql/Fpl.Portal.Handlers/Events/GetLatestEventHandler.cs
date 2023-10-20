@@ -25,12 +25,17 @@ public class GetLatestEventHandler : IGetLatestEventHandler
             .LastOrDefault(game => game.IsFinished);
 
         return gameWeek != null ?
-            BuildFixture(gameWeek)
+            BuildEvent(gameWeek)
             : new EventResult();
         
         
-        //Local Function
-        EventResult BuildFixture(Event game) =>
+        //Local Functions
+        async Task<BootstrapStaticResponse> GetBootstrapStaticAsync() =>
+            await _getBootstrapStaticFunctionCaller
+                .ExecuteAsync()
+                .ConfigureAwait(false);
+        
+        EventResult BuildEvent(Event game) =>
             _mapper.Map<EventResult>(game, CreateMappingOptions(globalFplData,
                 gameWeek));
     }
@@ -55,9 +60,4 @@ public class GetLatestEventHandler : IGetLatestEventHandler
             globalFplData.Players.ToList()
                 .Find(t => t.Id == playerId)!;
     }
-    
-    private async Task<BootstrapStaticResponse> GetBootstrapStaticAsync() =>
-        await _getBootstrapStaticFunctionCaller
-            .ExecuteAsync()
-            .ConfigureAwait(false);
 }

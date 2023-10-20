@@ -13,6 +13,8 @@ using AutoMapper;
 using Fpl.Portal.GraphQL.Types.EnumTypes;
 using Fpl.Portal.Handlers.Events;
 using Fpl.Portal.Handlers.Fixtures;
+using Fpl.Portal.Handlers.Players;
+using Fpl.Portal.Handlers.Teams;
 using Fpl.Portal.Mapping;
 
 namespace Fpl.Portal.GraphQL
@@ -32,7 +34,9 @@ namespace Fpl.Portal.GraphQL
         public static IServiceCollection AddProjectHandlers(this IServiceCollection services) =>
             services
                 .AddSingleton<IGetFixturesByEventIdHandler, GetFixturesByEventIdHandler>()
-                .AddSingleton<IGetLatestEventHandler, GetLatestEventHandler>();
+                .AddSingleton<IGetLatestEventHandler, GetLatestEventHandler>()
+                .AddSingleton<IGetTeamListHandler, GetTeamListHandler>()
+                .AddSingleton<IGetPlayerListHandler, GetPlayerListHandler>();
 
         public static IRequestExecutorBuilder AddProjectScalarTypes(this IRequestExecutorBuilder builder) =>
             builder.BindRuntimeType<DateTime, DateType>();
@@ -58,7 +62,9 @@ namespace Fpl.Portal.GraphQL
         private static IRequestExecutorBuilder AddQueryTypes(this IRequestExecutorBuilder builder) =>
             builder.AddQueryType(x => x.Name("Query"))
                 .AddType<GetFixturesObject>()
-                .AddType<GetEventsObject>();
+                .AddType<GetEventsObject>()
+                .AddType<GetTeamsObject>()
+                .AddType<GetPlayersObject>();
 
         private static IRequestExecutorBuilder AddEnumTypes(this IRequestExecutorBuilder builder) => builder
             .AddType<StatIdentifierTypeEnumObject>()
