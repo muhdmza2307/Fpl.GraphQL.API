@@ -1,0 +1,47 @@
+@page "/catalog/players"
+
+@if (PlayersList == null)
+{
+    <h3>Loading players...</h3>
+}
+else
+{
+    <h3 class="mb-5">Players</h3>
+
+    var playerCount = PlayersList.Count();
+
+    @if (playerCount > 0)
+    {
+        @foreach(var playerGroup in GetGroupedPlayersByTeam())
+        {
+            <h4>@GetTeamName(playerGroup)</h4>
+                    
+            <div class = "row mt-3">
+                @*<DisplayProducts Products = "@prodGroup.Take(4)"></DisplayProducts>*@
+                
+                @foreach(var item in playerGroup.Take(4))
+                {
+                    var playerPhotoUrl = $"https://resources.premierleague.com/premierleague/photos/players/250x250/p{item.Code}.png";
+                    <div class="col-md-3 mb-2">
+                        <a href="/ProductDetails/@item.Id">
+                            <div class="card">
+                                <img class="img-thumbnail" src="@playerPhotoUrl" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title mb-3">
+                                        @item.WebName
+                                    </h5>
+                                    <p class="card-text">
+                                        <b>@item.News</b>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>              
+                    </div>                         
+                }
+            </div>
+            <hr class="mb-3"/>
+        }
+
+    }
+
+}
