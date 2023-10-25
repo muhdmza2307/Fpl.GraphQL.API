@@ -1,7 +1,6 @@
 using Fpl.Portal.Web.Models.FplGraphQlResponse;
 using Fpl.Portal.Web.Models.Players;
 using Fpl.Portal.Web.Repository.Repositories;
-using GraphQL;
 
 namespace Fpl.Portal.Web.Repository.Queries.FplQueries;
 
@@ -22,6 +21,7 @@ public class GetPlayerListQuery :
                 photo
                 news
                 team
+                teamName
                 form
               }
             }";

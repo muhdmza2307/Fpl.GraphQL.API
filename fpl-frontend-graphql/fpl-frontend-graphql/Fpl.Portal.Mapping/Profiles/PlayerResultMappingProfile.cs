@@ -1,4 +1,5 @@
 using AutoMapper;
+using Fpl.Portal.Mapping.Resolvers;
 using Fpl.Portal.Models.BootstrapStatic;
 using Fpl.Portal.Models.Players;
 
@@ -8,6 +9,7 @@ public class PlayerResultMappingProfile : Profile
 {
     public PlayerResultMappingProfile()
     {
-        CreateMap<Player, PlayerResult>();
+        CreateMap<Player, PlayerResult>()
+            .ForMember(dest => dest.TeamName, opts => opts.MapFrom<TeamNameResolver>());
     }
 }

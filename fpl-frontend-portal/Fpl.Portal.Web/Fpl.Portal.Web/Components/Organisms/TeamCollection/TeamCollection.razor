@@ -1,0 +1,30 @@
+@using Fpl.Portal.Web.Models.Teams
+
+@for (var i =0; i < Count; i++)
+{
+    var teamRowList = Teams.Skip(i * ItemsPerRow).Take(ItemsPerRow).ToList();
+    
+    <div class="row mt-3">
+        @foreach (var item in teamRowList)
+        {
+            var teamPhotoUrl = $"https://resources.premierleague.com/premierleague/badges/t{item.Code}.png";
+            <div class="col-md-3 mb-2">
+                <Card ImageSrc="@teamPhotoUrl"
+                      Title="@item.ShortName"
+                      Text="@item.Name" />
+            </div>
+        }
+    </div>
+}
+
+@code {
+    [Parameter]
+    public int Count { get; set; }
+    
+    [Parameter]
+    public int ItemsPerRow { get; set; }
+
+    [Parameter]
+    public IEnumerable<Team> Teams { get; set; } = null!;
+
+}
