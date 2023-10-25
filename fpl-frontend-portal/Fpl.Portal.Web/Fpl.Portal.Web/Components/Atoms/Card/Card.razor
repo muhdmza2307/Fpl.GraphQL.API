@@ -1,0 +1,23 @@
+<div class="card shadow-sm border-0 rounded">
+    <div class="card-body p-0">
+        <img src="@ImageSrc" alt="" class="w-100 card-img-top">
+        <div class="p-4">
+            <h5 class="mb-0">@Title</h5>
+            <p class="small text-muted">@Text</p>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    
+    [Parameter]
+    public string ImageSrc { get; set; } = null!;
+    
+    [Parameter]
+    public string Title { get; set; } = null!;
+    
+    [Parameter]
+    public string Text { get; set; } = null!;
+
+}

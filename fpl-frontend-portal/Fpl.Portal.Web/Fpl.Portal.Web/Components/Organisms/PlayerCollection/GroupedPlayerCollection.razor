@@ -1,0 +1,25 @@
+@using Fpl.Portal.Web.Models.Players
+
+@foreach(var playerGroup in GroupedPlayers)
+{
+    <h4>@GetTeamName(playerGroup)</h4>
+            
+    <div class = "row mt-3">
+        <PlayerCollection Players="playerGroup.Take(4)"/>
+    </div>
+    <hr class="mb-3"/>
+}
+
+@code {
+
+    [Parameter]
+    public IOrderedEnumerable<IGrouping<string, Player>> GroupedPlayers { get; set; } = null!;
+    
+    private string GetTeamName(IGrouping<string, Player> groupedPlayers)
+    {
+        return groupedPlayers
+            .FirstOrDefault(p => p.TeamName == groupedPlayers.Key)!
+            .TeamName;
+    }
+
+}

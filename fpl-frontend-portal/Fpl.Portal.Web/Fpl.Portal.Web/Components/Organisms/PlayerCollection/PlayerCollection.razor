@@ -1,0 +1,17 @@
+@using Fpl.Portal.Web.Models.Players
+
+@foreach(var item in Players)
+{
+    var playerPhotoUrl = $"https://resources.premierleague.com/premierleague/photos/players/250x250/p{item.Code}.png";
+    <div class="col-md-3 mb-2">
+         <Card ImageSrc="@playerPhotoUrl"
+              Title="@item.WebName"
+              Text="@item.News" />     
+    </div>                         
+}
+
+@code {
+
+    [Parameter]
+    public IEnumerable<Player> Players { get; set; } = null!;
+}

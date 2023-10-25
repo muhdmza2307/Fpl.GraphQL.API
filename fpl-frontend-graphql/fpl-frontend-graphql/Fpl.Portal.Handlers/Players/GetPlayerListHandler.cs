@@ -33,6 +33,19 @@ public class GetPlayerListHandler : IGetPlayerListHandler
                 .ConfigureAwait(false);
         
         PlayerResult BuildPlayer(Player player) =>
-            _mapper.Map<PlayerResult>(player);
+            _mapper.Map<PlayerResult>(player, CreateMappingOptions(globalFplData));
+    }
+    
+    private static Action<IMappingOperationOptions> CreateMappingOptions(BootstrapStaticResponse globalFplData)
+    {
+        return opt =>
+        {
+            opt.Items["Teams"] = GetTeamsFromGlobal();
+        };
+        
+        
+        //Local Function
+        IEnumerable<Team> GetTeamsFromGlobal() =>
+            globalFplData.Teams.ToList();
     }
 }

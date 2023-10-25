@@ -12,34 +12,8 @@ else
 
     if (teamCount > 0)
     {
-        const int itemsPerRow = 4;
-        
-        for (var i =0; i < teamCount; i++)
-        {
-            var teamRowList = TeamsList.Skip(i * itemsPerRow).Take(itemsPerRow).ToList();
-            
-            <div class="row mt-3">
-                @foreach (var item in teamRowList)
-                {
-                    var teamPhotoUrl = $"https://resources.premierleague.com/premierleague/badges/t{item.Code}.png";
-                    <div class="col-md-3 mb-2">
-                        <a href="#">
-                            <div class="card">
-                                <img class="img-thumbnail" src="@teamPhotoUrl" alt=""/>
-                                <div class="card-body">
-                                    <h5 class="card-title mb-3">
-                                        @item.ShortName
-                                    </h5>
-                                    <p class="card-text">
-                                        <b>@item.Name</b>
-                                    </p>
-                                </div>
-
-                            </div>
-                        </a>
-                    </div>
-                }
-            </div>
-        }
+        <TeamCollection Count="teamCount"
+                        ItemsPerRow=4
+                        Teams="TeamsList"/>
     }
 }

@@ -11,5 +11,6 @@ public class Player : IGraphQlDataResponse
     public string WebName { get; set; } = null!;
     public DateTime? NewsAdded { get; set; }
     public int Team { get; set; }
+    public string TeamName { get; set; } = null!;
     public string Form { get; set; } = null!;
 }
