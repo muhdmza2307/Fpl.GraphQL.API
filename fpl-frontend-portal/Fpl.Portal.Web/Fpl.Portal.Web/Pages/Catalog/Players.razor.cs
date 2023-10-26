@@ -17,9 +17,9 @@ public partial class Players
             .ConfigureAwait(false);
     }
 
-    private IOrderedEnumerable<IGrouping<string, Player>> GetGroupedPlayersByTeam() =>
+    private IOrderedEnumerable<IGrouping<(int, string), Player>> GetGroupedPlayersByTeam() =>
         PlayersList!
             .OrderByDescending(player => Convert.ToDecimal(player.Form))
-            .GroupBy(player => player.TeamName)
+            .GroupBy(player => (player.Team, player.TeamName))
             .OrderBy(playerByTeam => playerByTeam.Key);
 }

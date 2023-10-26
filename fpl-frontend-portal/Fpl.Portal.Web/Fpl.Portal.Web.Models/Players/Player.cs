@@ -13,4 +13,8 @@ public class Player : IGraphQlDataResponse
     public int Team { get; set; }
     public string TeamName { get; set; } = null!;
     public string Form { get; set; } = null!;
+    public int GoalsScored { get; set; }
+    public int Assists { get; set; }
+    public int CleanSheets { get; set; }
+    public int GoalsConceded { get; set; }
 }
