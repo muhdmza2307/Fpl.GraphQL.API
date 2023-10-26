@@ -1,8 +1,63 @@
 @using Fpl.Portal.Web.Models.Players
 
+<style>
+    .hover-custom {
+    	position: relative;
+    	font-weight: bold;
+    	}
+    	
+	.hover-custom::before {
+		content: '';
+		background-color: green;
+		position: absolute;
+		left: .5rem;
+		bottom: 5px;
+		width: 100%;
+		height: 8px;
+		z-index: -1;
+		transition: all .3s ease-in-out;
+	}
+    	
+	.hover-custom:hover::before {
+		left: -5px;
+		bottom: 0;
+		height: 100%;
+		width: calc(100% + 10px);
+	}
+	
+	.az-dashboard-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #cdd4e0;
+      margin-bottom: 20px;
+    }
+    
+    .az-dashboard-nav .nav-link {
+      font-size: 12px;
+      padding: 5px 10px 8px;
+      display: flex;
+      align-items: center;
+      line-height: 1;
+      border-left: 1px solid #cdd4e0;
+    }
+    
+    .team-info {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+</style>
+
+
 @foreach(var playerGroup in GroupedPlayers)
 {
-    <h4>@GetTeamName(playerGroup)</h4>
+	var teamInfo = GetTeam(playerGroup);
+	
+	<div class="team-info">
+		<h4>@teamInfo.Item2</h4>
+		<a class="btn btn-primary" href="/catalog/teamPlayers/@teamInfo.Item1">More</a>
+	</div>
             
     <div class = "row mt-3">
         <PlayerCollection Players="playerGroup.Take(4)"/>
@@ -13,13 +68,14 @@
 @code {
 
     [Parameter]
-    public IOrderedEnumerable<IGrouping<string, Player>> GroupedPlayers { get; set; } = null!;
+    public IOrderedEnumerable<IGrouping<(int, string), Player>> GroupedPlayers { get; set; } = null!;
     
-    private string GetTeamName(IGrouping<string, Player> groupedPlayers)
+    private (int, string) GetTeam(IGrouping<(int, string), Player> groupedPlayers)
     {
         return groupedPlayers
-            .FirstOrDefault(p => p.TeamName == groupedPlayers.Key)!
-            .TeamName;
+            .Where(p => p.Team == groupedPlayers.Key.Item1)
+	        .Select(p => (p.Team, p.TeamName))
+	        .FirstOrDefault();
     }
 
 }

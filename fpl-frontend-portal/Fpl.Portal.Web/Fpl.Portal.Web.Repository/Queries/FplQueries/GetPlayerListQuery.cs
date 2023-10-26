@@ -23,6 +23,10 @@ public class GetPlayerListQuery :
                 team
                 teamName
                 form
+                goalsScored
+                assists
+                cleanSheets
+                goalsConceded
               }
             }";
 
